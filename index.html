@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name = "author" content = "Adam To">
+    <meta name = "description" content = "TODO">
+    <meta name="robots" content="index,follow">
+
+
+    <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
+    <link rel="icon" href="assets/favicon.png" type="image/x-icon">
+
+    <link rel = "stylesheet" href = "styles.css">
+    <script src = "OBFUSC.js" defer></script>
+
+    <!-- jquery+ui -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.14.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js"></script>
+
+    <script>
+    (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+        key: "AIzaSyC20qc9KQ-C-7Vz3KuRKBGN7TmROmniQLs",
+        v: "weekly",
+        // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+        // Add other bootstrap parameters as needed, using camel case.
+    });
+    </script>
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC20qc9KQ-C-7Vz3KuRKBGN7TmROmniQLs&callback=initMap&libraries=maps,marker,places"
+    async defer
+    ></script>
+
+
+    <!-- Carousel  links-->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
+
+    <script>
+    document.addEventListener( 'DOMContentLoaded', function() {
+        new Splide( '#image-carousel', {
+                perPage    : 2,
+                breakpoints: {
+                    640: {
+                        perPage: 1,
+                    },
+                },
+
+
+        } ).mount();
+    } );
+    </script>
+
+
+    <title>Upcoming Wellness</title>
+</head>
+<body>
+    <header>
+        <h1>Upcoming Wellness</h1>
+        <a href = "#"><img src = "assets/white_logo.png" alt = "Logo for Upcoming Wellness"></a>
+        <nav>
+            <h2 class = "sr-only">Main Navigation</h2>
+            <ul>
+                <li>Home</li>
+                <li>Who We Are</li>
+                <li>Contact</li>
+            </ul>
+            
+        </nav>
+    </header>
+    <main>
+        <section id = "location">
+            <h2>Location and Hours</h2>
+            <p>610 N Alma School Rd Suite 46, Chandler, Az, 85224</p>
+            <ul>
+                <li>Monday: 8:00am - 5:00pm</li>
+                <li>Tuesday: 8:00am - 5:00pm</li>
+                <li>Wednesday: 8:00am - 2:00pm</li>
+                <li>Thursday: 8:00am - 5:00pm</li>
+                <li>Friday: 8:00am - 5:00pm</li>
+            </ul>
+
+
+            <div id = "googlemap"></div>
+
+            <!-- <gmp-map center="33.3149494,-111.8599934" zoom="20" map-id="79243a7ee84e87cb5a8b861a" id = "googlemap"></gmp-map>
+            <div id="controls" slot="control-inline-start-block-start">
+                <h3>My Google Maps Demo</h3>
+            </div> -->
+
+
+            <!-- <iframe class="map-top" width="598" height="450" src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyC20qc9KQ-C-7Vz3KuRKBGN7TmROmniQLs&origin=Oslo+Norway&destination=Telemark+Norway&avoid=tolls|highways "allowfullscreen title = "lorem"></iframe> -->
+        </section>
+        <!-- <section id = "booking">
+            <h2>Booking/Contact</h2>
+            <p>Leave your information below and we'll reach out!</p>
+        </section> -->
+
+            <!-- CAROUSEL -->
+            <section id = "image-carousel" class="splide" aria-labelledby="carousel-heading">
+                <h2 id="carousel-heading">Gallery</h2>
+                <div class="splide__track">
+                    <ul class="splide__list">
+                        <li class="splide__slide">
+                            <img src="assets/images/headshot.jpg" alt="">
+                            
+                            <!-- <div>Headshot</div> -->
+                        </li>
+                        <li class="splide__slide">
+                            <div class = "splide__slide__container">
+                                <img src = "assets/images/carousel1.jpg" alt = "lorem">
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class = "splide__slide__container">
+                                <img src = "assets/images/carousel2.jpg" alt = "lorem">
+                            </div>
+                        </li>
+                        <li class="splide__slide">
+                            <div class = "splide__slide__container">
+                                <img src = "assets/images/carousel3.jpg" alt = "lorem">
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+
+        </section>
+        <section id = "faq">
+            <h2>Frequently Asked Questions</h2>
+            <section id = "accordion">
+                <h3>What is fascia?</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut doloribus quia facilis ducimus aut non, beatae assumenda excepturi hic. Quod voluptates et dignissimos nemo magnam sunt, consequuntur pariatur excepturi inventore.</p>
+                <h3>Second question?</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut doloribus quia facilis ducimus aut non, beatae assumenda excepturi hic. Quod voluptates et dignissimos nemo magnam sunt, consequuntur pariatur excepturi inventore.</p>
+                <h3>Third question?</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut doloribus quia facilis ducimus aut non, beatae assumenda excepturi hic. Quod voluptates et dignissimos nemo magnam sunt, consequuntur pariatur excepturi inventore.</p>
+                <h3>Fourth question?</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut doloribus quia facilis ducimus aut non, beatae assumenda excepturi hic. Quod voluptates et dignissimos nemo magnam sunt, consequuntur pariatur excepturi inventore.</p>
+            </section>
+        </section>
+    </main>
+    <footer>
+        <p><small>Copyright &copy; 2026 Upcoming Wellness</small></p>
+        <ul>
+            <li></li>
+        </ul>
+    </footer>
+</body>
+</html>
