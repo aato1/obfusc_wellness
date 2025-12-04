@@ -61,16 +61,15 @@ html, body {
     padding: 0;
 }
 
-
-/*variables*/
-    :root{
-        /*fonts*/
-        .montserrat-regular {
+.montserrat-regular {
             font-family: "Montserrat", sans-serif;
-            font-optical-sizing: auto;
             font-weight: 400;
             font-style: normal;
         }
+/*variables*/
+    :root{
+        /*fonts*/
+        
 
         --font: "Montserrat", sans-serif; 
 
