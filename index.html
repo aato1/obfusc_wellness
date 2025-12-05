@@ -1,24 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- meta tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name = "author" content = "Adam To">
-    <meta name = "description" content = "TODO">
+    <meta name = "description" content = "Upcoming Wellness is a fitness center in Chandler committed to improving your physical, mental, emotional, and spiritual health.">
     <meta name="robots" content="index,follow">
 
-
+    <!-- icon -->
     <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
     <link rel="icon" href="assets/favicon.png" type="image/x-icon">
 
+    <!-- created stylesheets -->
     <link rel = "stylesheet" href = "styles.css">
-    <script src = "OBFUSC.js" defer></script>
+    <script src = "OBFSUC.js" defer></script>
 
-    <!-- jquery+ui -->
+    <!-- jquery+ui links -->
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.14.1/themes/smoothness/jquery-ui.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.14.1/jquery-ui.min.js"></script>
 
+    <!-- googlemaps link. INCLUDES KEY: REMOVE? -->
     <script>
     (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
         key: "AIzaSyC20qc9KQ-C-7Vz3KuRKBGN7TmROmniQLs",
@@ -27,17 +30,16 @@
         // Add other bootstrap parameters as needed, using camel case.
     });
     </script>
-    <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC20qc9KQ-C-7Vz3KuRKBGN7TmROmniQLs&callback=initMap&libraries=maps,marker,places"
-    async defer
-    ></script>
 
+    <!-- original googlemaps script call. -->
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?key={___KEY___}&callback=initMap&libraries=maps,marker,places" async defer></script> -->
 
-    <!-- Carousel  links-->
+    <!-- Carousel links-->
     <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css" rel="stylesheet">
 
-    <script>
+    <!-- originally this code was only working inline. added this back to the scripts file once it started working again, but keeping for failsafe/reference. -->
+    <!-- <script>
     document.addEventListener( 'DOMContentLoaded', function() {
         new Splide( '#image-carousel', {
                 perPage    : 2,
@@ -46,12 +48,9 @@
                         perPage: 1,
                     },
                 },
-
-
         } ).mount();
     } );
-    </script>
-
+    </script> -->
 
     <title>Upcoming Wellness</title>
 </head>
@@ -62,11 +61,11 @@
         <nav>
             <h2 class = "sr-only">Main Navigation</h2>
             <ul>
-                <li>Home</li>
-                <li>Who We Are</li>
-                <li>Contact</li>
+                <li><a href = "#">Home</a></li>
+                <li><a href = "#">Who We Are</a></li>
+                <li><a href = "#">Contact</a></li>
             </ul>
-            
+            <button id = "lightswitch">Toggle Dark</button>
         </nav>
     </header>
     <main>
@@ -84,6 +83,7 @@
 
             <div id = "googlemap"></div>
 
+            <!-- turns out there's a LOT of different versions of the maps api, all with their own ways to embed and own little syntax quirks. went through 2 others before finding the one that actually let me do what i was intending. -->
             <!-- <gmp-map center="33.3149494,-111.8599934" zoom="20" map-id="79243a7ee84e87cb5a8b861a" id = "googlemap"></gmp-map>
             <div id="controls" slot="control-inline-start-block-start">
                 <h3>My Google Maps Demo</h3>
@@ -91,6 +91,11 @@
 
 
             <!-- <iframe class="map-top" width="598" height="450" src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyC20qc9KQ-C-7Vz3KuRKBGN7TmROmniQLs&origin=Oslo+Norway&destination=Telemark+Norway&avoid=tolls|highways "allowfullscreen title = "lorem"></iframe> -->
+        </section>
+
+        <section id = "reviews">
+            <h2>Reviews</h2>
+            <div id = "reviewframe"></div>
         </section>
         <!-- <section id = "booking">
             <h2>Booking/Contact</h2>
@@ -103,7 +108,7 @@
                 <div class="splide__track">
                     <ul class="splide__list">
                         <li class="splide__slide">
-                            <img src="assets/images/headshot.jpg" alt="">
+                            <img src="assets/images/headshot.jpg" alt="A picture of Jared Countess, Upcoming Wellness' fitness instructor.">
                             
                             <!-- <div>Headshot</div> -->
                         </li>
@@ -126,26 +131,23 @@
                 </div>
             </section>
 
-
         <section id = "faq">
             <h2>Frequently Asked Questions</h2>
             <section id = "accordion">
                 <h3>What is fascia?</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut doloribus quia facilis ducimus aut non, beatae assumenda excepturi hic. Quod voluptates et dignissimos nemo magnam sunt, consequuntur pariatur excepturi inventore.</p>
-                <h3>Second question?</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut doloribus quia facilis ducimus aut non, beatae assumenda excepturi hic. Quod voluptates et dignissimos nemo magnam sunt, consequuntur pariatur excepturi inventore.</p>
-                <h3>Third question?</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut doloribus quia facilis ducimus aut non, beatae assumenda excepturi hic. Quod voluptates et dignissimos nemo magnam sunt, consequuntur pariatur excepturi inventore.</p>
-                <h3>Fourth question?</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut doloribus quia facilis ducimus aut non, beatae assumenda excepturi hic. Quod voluptates et dignissimos nemo magnam sunt, consequuntur pariatur excepturi inventore.</p>
+                <p>Fascia is a type of connective tissue found throughout the human body. It forms a continuous, three-dimensional web that surrounds, supports, and separates muscles, bones, nerves, blood vessels, and organs.</p>
+                <h3>Are you accepting new clients?</h3>
+                <p>Of course! Schedule an appointment today through our Linktree or socials.</p>
+                <h3>Do you have any online programs?</h3>
+                <p>Yes! Our online clients meet with us regularly and our community is making significant progress towrads their goals! Feel free to reach out for a free consult or more information.</p>
             </section>
         </section>
     </main>
     <footer>
         <p><small>Copyright &copy; 2026 Upcoming Wellness</small></p>
-        <ul>
+        <!-- <ul>
             <li></li>
-        </ul>
+        </ul> -->
     </footer>
 </body>
 </html>

@@ -134,6 +134,14 @@ html {
         text-align: center;
         vertical-align: bottom;
     }
+    nav a {
+        color:#fff;
+    }
+    header button {
+        background-color: var(--blue);
+        color: #fff;
+        border: 1px solid #fff;
+    }
 
 /*main styles*/
     main {
@@ -192,27 +200,52 @@ html {
         grid-column: 7/-1;
         grid-row: 2/4;
     }
-/*maps style declaration: HEIGHTS MUST BE DEFINED EXPLICITLY*/
+    /*maps style declaration: HEIGHTS MUST BE DEFINED EXPLICITLY*/
 
-    gmp-map {
-        /* height: 100%; */
-        width: 640px;
-        height: 640px;
-    }
-    #googlemap {
-        height: 440px;
-    }
-/**/
+        gmp-map {
+            /* height: 100%; */
+            width: 640px;
+            height: 640px;
+        }
+        #googlemap {
+            height: 440px;
+        }
 
-    #location span {
+        #rating p {
+            color: #000;
+        }
+    /**/
+
+    /* #location span {
         text-align: right;
-    }
+    } */
 
 
 
 
-    #booking {
+    #reviews {
         grid-row: 2/3;
+        display: block;
+    }
+    /* #reviews div {
+        display: flex;
+    } */
+    #reviewframe {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    #reviewframe div {
+        border: 1px solid #fff;
+        padding: 1rem;
+    }
+    #reviewframe div:nth-of-type(1){
+        grid-column: 1/2;
+    }
+    #reviewframe div:nth-of-type(2){
+        grid-column: 2/3;
+    }
+    #reviewframe div:nth-of-type(3){
+        grid-column: 3/4;
     }
 
 
@@ -225,18 +258,25 @@ html {
         grid-column: 1/-1;
     }
 
-/* CAROUSEL STYLES */
+    /* CAROUSEL STYLES */
+        .splide__track {
+            margin: 1rem auto;
+            text-align: center;
+        }
+        /* .splide__arrows {
+            width: 50%;
+        }  */
 
-    .splide__slide img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-    }
-    .splide__slide img:last-of-type {
-        height: 608px;
-    }
+        .splide__slide img {
+            width: 50%;
+            height: auto;
+            object-fit: cover;
+        }
+        .splide__slide img:last-of-type {
+            height: 608px;
+        }
 
-/**/
+    /**/
 
 
     #faq {
@@ -262,3 +302,9 @@ html {
         text-align: center;
     }
 /**/   
+/* 
+@media (prefers-color-scheme: dark) {
+    #googlemap {
+
+    }
+} */
